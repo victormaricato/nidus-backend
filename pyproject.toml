@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.66.0"
+uvicorn = "^0.14.0"
+tweepy = "^3.10.0"
+pydantic-sqlalchemy = "^0.0.9"
+mysqlclient = "^2.0.3"
+sendgrid = "^6.7.1"
+APScheduler = "^3.7.0"
+twilio = "^6.63.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
