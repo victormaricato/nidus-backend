@@ -22,3 +22,6 @@ class User(BaseModel):
     tw_profile_picture: str
     tw_email: str
     settings: Settings
+
+class NumberInsert(BaseModel):
+    number: str

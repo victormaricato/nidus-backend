@@ -28,3 +28,9 @@ class UserRepository(BaseRepository):
     def find_by_id(self, id: str) -> User:
         return self.session.query(self.table).join(self.table.settings)\
             .filter(self.table.id==id).first()
+
+    def set_number(self,user_id: str, number: str):
+        self.session.query(self.table)\
+            .filter(self.table.id==user_id).first().phone = number
+        self.session.commit()
+        return True
