@@ -72,7 +72,7 @@ class Tasklist(Base):
     user_id = Column(String, ForeignKey("user.id"),  unique=True, index=True)
     content = Column(String)
     created_at = Column(TIMESTAMP, server_default=now())
-    tasks = relationship("Task", backref="tasklists", lazy='joined')
+    tasks = relationship("Task", backref="tasklists", lazy='joined', cascade="all, delete-orphan")
     
 
 class Task(Base):
