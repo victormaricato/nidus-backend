@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker
 
 # DATABASE_URL: str = environ.get("CLEARDB_DATABASE_URL", "mysql://root:1234@127.0.0.1:3306/nidus")
 
-DATABASE_URL: str = "mysql://root:1234@host.docker.internal:3306/nidus"
+DATABASE_URL: str = "mysql://root@localhost:3306/nidus"
 
 class BaseRepository:
     def __init__(self):

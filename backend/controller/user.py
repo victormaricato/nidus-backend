@@ -9,7 +9,7 @@ router = APIRouter(prefix="/user")
 
 @router.get("/")
 async def get(user_id: str,
-authorization: str = Header(None),
+authorization: str,
 user_repository: UserRepository = Depends(),
 session_repository: SessionRepository = Depends()
 ):

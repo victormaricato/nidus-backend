@@ -9,7 +9,7 @@ router = APIRouter(prefix="/settings")
 @router.put("/")
 async def update(
     settings: Settings,
-    authorization: str = Header(None),
+    authorization: str,
     settings_repository: SettingsRepository = Depends(),
     session_repository: SessionRepository = Depends()
 ) -> Settings:
