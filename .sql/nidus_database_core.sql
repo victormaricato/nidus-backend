@@ -42,18 +42,6 @@ CREATE TABLE `session` (
         REFERENCES `user` (`id`)
 )  ENGINE=INNODB DEFAULT CHARSET=UTF8MB4;
 
-CREATE TABLE `notes` (
-    `id` VARCHAR(255) NOT NULL,
-    `tweet_id` VARCHAR(255),
-    `user_id` VARCHAR(255) NOT NULL,
-    `content` VARCHAR(300) NOT NULL,
-    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (`id`),
-    KEY `notes_user_fk` (`user_id`),
-    CONSTRAINT `notes_user_fk` FOREIGN KEY (`user_id`)
-        REFERENCES `user` (`id`)
-)  ENGINE=INNODB DEFAULT CHARSET=UTF8MB4;
-
 CREATE TABLE `reminders` (
     `id` VARCHAR(255) NOT NULL,
     `tweet_id` VARCHAR(255),

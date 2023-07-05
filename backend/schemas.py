@@ -45,16 +45,6 @@ class Session(Base):
     created_at = Column(TIMESTAMP, server_default=now())
     end_at = Column(TIMESTAMP)
 
-
-class Note(Base):
-    __tablename__ = "notes"
-    id = Column(String, primary_key=True)
-    tweet_id = Column(String)
-    user_id = Column(String, ForeignKey("user.id"),  unique=True, index=True)
-    content = Column(String)
-    created_at = Column(TIMESTAMP, server_default=now())
-
-
 class Reminder(Base):
     __tablename__ = "reminders"
     id = Column(String, primary_key=True)

@@ -1,9 +1,10 @@
-from backend.models.notes import NoteModel
-from backend.repository.base import BaseRepository
-from backend.schemas import Note
+from .base import BaseRepository
+from models.notes import NoteModel
+
 
 class NotesRepository(BaseRepository):
-    table = Note
+    COLLECTION_NAME = "notes"
 
     def create(self, note: NoteModel) -> NoteModel:
-        return self.insert_and_return(self.table, note.dict())
+        result = self.insert_and_return(note.dict(by_alias=True))
+        return NoteModel(**result)

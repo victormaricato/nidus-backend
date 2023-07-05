@@ -14,6 +14,8 @@ mysqlclient = "^2.0.3"
 sendgrid = "^6.7.1"
 APScheduler = "^3.7.0"
 twilio = "^6.63.1"
+locust = "^2.15.1"
+pymongo = "^4.4.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
