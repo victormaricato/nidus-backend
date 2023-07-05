@@ -18,20 +18,16 @@ class UserBehavior(SequentialTaskSet):
         self.client.put("/settings", params={"authorization": "1234567lalalala"}, headers=headers, json=data)
 
     @task
+    def get_settings(self):
+        self.client.get("/settings", params={"user_id": 1, "authorization": "1234567lalalala"})
+
+    @task
     def post_note(self):
         headers = {'accept': 'application/json', 'Content-Type': 'application/json', 'user_id': '1'}
         data = {
             "content": "this is 1 note"
         }
         self.client.post("/notes", params={"authorization": "1234567lalalala"}, headers=headers, json=data)
-
-    @task
-    def get_user(self):
-        self.client.get("/user", params={"user_id": 1, "authorization": "1234567lalalala"})
-
-    @task
-    def get_settings(self):
-        self.client.get("/settings", params={"user_id": 1, "authorization": "1234567lalalala"})
 
 
 class WebsiteUser(HttpUser):
