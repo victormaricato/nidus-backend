@@ -19,7 +19,6 @@ class User(Base):
     tw_email = Column(String)
     created_at = Column(TIMESTAMP, server_default=now())
     settings = relationship("Settings", backref="user", lazy='joined')
-    notes = relationship("Note", backref="user", lazy='joined')
     reminders = relationship("Reminder", backref="user", lazy='joined')
     tasklists = relationship("Tasklist", backref="user", lazy='joined')
     session = relationship("Session", backref="user", lazy='joined')
