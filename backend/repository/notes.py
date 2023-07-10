@@ -1,8 +1,8 @@
-from .base import BaseRepository
-from models.notes import NoteModel
+from .base import BaseMongoRepository
+from backend.models.notes import NoteModel
 
 
-class NotesRepository(BaseRepository):
+class NotesRepository(BaseMongoRepository):
     COLLECTION_NAME = "notes"
 
     def create(self, note: NoteModel) -> NoteModel:

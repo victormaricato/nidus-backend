@@ -43,7 +43,7 @@ class BaseMongoRepository:
     DATABASE_NAME: str = "nidus"
 
     def __init__(self):
-        client = MongoClient(DATABASE_URL)
+        client = MongoClient(self.DATABASE_URL)
         self.db = client[self.DATABASE_NAME]
         self.collection = self.db[self.COLLECTION_NAME]
 

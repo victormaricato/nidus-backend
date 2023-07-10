@@ -12,7 +12,7 @@ router = APIRouter(prefix="/notes")
 @router.post("/")
 async def post(
     note_insert: NoteInsert,
-    authorization: str,
+    authorization: str = Header(None),
     user_id: str = Header(None, convert_underscores=False), 
     notes_repository: NotesRepository = Depends(),
     session_repository: SessionRepository = Depends(),
